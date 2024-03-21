@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Главная</title>
+</head>
+
+<body>
+
+    <div class="burger-menu disable">
+        <div class="burger-menu_wrapper">
+            <ul>
+                <li><a href="">Мой профиль</a></li>
+                <li><a href="">Новинки</a> </li>
+                <li><a href="">Электроника</a> </li>
+            </ul>
+            <ul>
+                <li><a href="">Одежда и обувь</a></li>
+                <li><a href="">Акции</a></li>
+                <li><a href="">Еда</a></li>
+            </ul>
+        </div>
+
+
+        <div class="burger-menu-img">
+            <img src="{% static 'img/burger.png' %}" alt="">
+        </div>
+
+    </div>
+
+    <header>
+        <div class="header__wrapper">
+            <div class="header__top">
+                <h1 class="header__name">EcoCleanNature</h1>
+                <button type="button" class="header__button">Корзина (3)</button>
+                <div class="header__burger-menu">
+                    <img src="{% static 'img/burger.png' %}" alt="">
+                </div>
+            </div>
+            <div class="header__bottom">
+                <h1>НЕВЕРОЯТНО ВЫГОДНО</h1>
+                <button type="button" class="header__button">За покупками</button>
+            </div>
+        </div>
+    </header>
+    {% block content %}{% endblock %}
+    <footer>
+        <div class="footer__wrapper">
+            <h1>Помощь</h1>
+            <h2>Как сделать заказ</h2>
+            <h2>Возврат товаров</h2>
+            <h2>Способ оплаты</h2>
+        </div>
+    </footer>
+
+    <script>
+        let burger = document.querySelector('.header__burger-menu')
+        let burgerSec = document.querySelector('.burger-menu-img')
+        br = document.querySelector('.burger-menu')
+
+        function open() {
+            br.classList.remove("disable")
+            console.log('dsds')
+        }
+
+        function close(){
+            br.classList.add("disable")
+        }
+
+        burger.addEventListener("click", open)
+        burgerSec.addEventListener("click", close)
+
+    </script>
+
+</body>
+
+</html>

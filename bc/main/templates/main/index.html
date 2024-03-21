@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="wrapper">
+    <div class="products">
+        
+    {% if prods %}
+        {% for el in prods%}
+        <div class="products__item">
+            <div class="item__wrapper">
+                <img src="{{ el.photo_url }}" alt="">
+                <div class="item__descr">
+                    <p class="item__price">{{ el.price }} р.</p>
+                    <p class="item__name">{{ el.name }} </p>
+                </div>
+                <button class="buscket">В корзину</button>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>Ничего нет</p>
+    {% endif %}
+    </div>
+</div>
+
+{% endblock %}
